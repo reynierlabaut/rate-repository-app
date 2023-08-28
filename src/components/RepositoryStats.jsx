@@ -1,13 +1,16 @@
-import React from 'react'
-import { View } from 'react-native'
-import StylesText from './StylesText'
+import React from 'react';
+import {View} from 'react-native';
+import StylesText from './StylesText';
 
-const RepositoryStats = (props) => {
+const RepositoryStats = props => {
   return (
     <View
       key={props.id}
-      style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}
-    >
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      }}>
       <View>
         <StylesText aling="center">{props.address.city}</StylesText>
         <StylesText aling="center" fontWeight="bold" fontSize="subheading">
@@ -19,13 +22,13 @@ const RepositoryStats = (props) => {
         <StylesText aling="center"> {props.address.suite} </StylesText>
       </View>
       <View>
-        <StylesText aling="center" fontWeight="bold" style={{ flex: 1 }}>
+        <StylesText aling="center" fontWeight="bold" style={{flex: 1}}>
           {props.company.name}
         </StylesText>
-      <StylesText aling="center"> {props.website} </StylesText>
+        <StylesText aling="center"> {props.website} </StylesText>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default RepositoryStats
+export default RepositoryStats;

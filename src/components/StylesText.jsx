@@ -1,35 +1,35 @@
-import React from 'react'
-import { Text, StyleSheet } from 'react-native'
-import theme from '../theme.js'
+import React from 'react';
+import {Text, StyleSheet} from 'react-native';
+import theme from '../theme.js';
 
 const styles = StyleSheet.create({
   text: {
     fontSize: theme.fontSizes.body,
     color: theme.colors.textPrimary,
     fontFamily: theme.fonts.main,
-    fontWeight: theme.fontWeigths.normal
+    fontWeight: theme.fontWeigths.normal,
   },
   colorPrimary: {
-    color: theme.colors.primary
+    color: theme.colors.primary,
   },
   colorSecondary: {
-    color: theme.colors.textSecondary
+    color: theme.colors.textSecondary,
   },
   blue: {
-    color: theme.colors.blue
+    color: theme.colors.blue,
   },
   bold: {
-    fontWeight: theme.fontWeigths.bold
+    fontWeight: theme.fontWeigths.bold,
   },
   subheading: {
-    fontSize: theme.fontSizes.subheading
+    fontSize: theme.fontSizes.subheading,
   },
   textAlingCenter: {
-    textAlign: 'center'
-  }
-})
+    textAlign: 'center',
+  },
+});
 
-export default function StylesText ({
+export default function StylesText({
   children,
   aling,
   color,
@@ -46,8 +46,12 @@ export default function StylesText ({
     color === 'blue' && styles.blue,
     fontSize === 'subheading' && styles.subheading,
     fontWeight === 'bold' && styles.bold,
-    style
-  ]
+    style,
+  ];
 
-  return <Text style={textStyles} {...restOfProps}>{children}</Text>
+  return (
+    <Text style={textStyles} {...restOfProps}>
+      {children}
+    </Text>
+  );
 }
