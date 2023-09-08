@@ -3,6 +3,7 @@ import {Formik, useField} from 'formik';
 import {Button, StyleSheet, View} from 'react-native';
 import StyledTextInput from '../components/StylesTextInput';
 import StylesText from '../components/StylesText';
+import {loginValidationSchema} from '../validationSchemas/login';
 
 const initialValue = {
   email: '',
@@ -14,11 +15,12 @@ const FormikInputValue = ({name, ...props}) => {
   return (
     <>
       <StyledTextInput
+        error={meta.error}
         value={field.value}
         onChangeText={value => helpers.setValue(value)}
         {...props}
       />
-      {meta.error && <StylesText style={styles.error}></StylesText>}
+      {meta.error && <StylesText style={styles.error}>{meta.error}</StylesText>}
     </>
   );
 };
@@ -28,7 +30,7 @@ export default function LogInPage() {
     <Formik
       initialValues={initialValue}
       onSubmit={values => console.log(values)}
-      validate={validate}>
+      validationSchema={loginValidationSchema}>
       {({handleSubmit}) => {
         return (
           <View style={styles.form}>
@@ -49,5 +51,11 @@ export default function LogInPage() {
 const styles = StyleSheet.create({
   form: {
     margin: 15,
+  },
+  error: {
+    color: 'red',
+    fontSize: 10,
+    marginBottom: 20,
+    marginTop: -5,
   },
 });
