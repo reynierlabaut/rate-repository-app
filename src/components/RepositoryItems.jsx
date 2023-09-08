@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   stylePhone: {
     padding: 4,
     color: theme.colors.white,
-    backgroundColor: Platform.OS === 'android' ? 'red' : 'green',
+    backgroundColor: Platform.OS === 'android' ? 'blue' : 'purple',
     alignSelf: 'flex-start',
     borderRadius: 4,
     overflow: 'hidden',
